@@ -1,0 +1,16 @@
+﻿Flight,Carrier 1,Carrier 2,Airport 1,Airport 2,Airport 3,Airport 4
+A,American,Cathay Pacific,ORD,LAX,HKG,PVG
+B,American,Cathay Pacific,ORD,SFO,HKG,PVG
+C,American,China Southern,ORD,LAX,CAN,PVG
+D,American,Virgin Atlantic,ORD,LHR,___,PVG
+E,British Airways,Virgin Atlantic,ORD,LHR,___,PVG
+F,Delta,___,ORD,SEA,ICN,PVG
+G,United,Austrian,ORD,LHR,VIE,PVG
+H,United,Virgin Atlantic,ORD,LHR,___,PVG
+I,United,___,ORD,DCA,EWR,PVG
+J,United,___,ORD,DEN,LAX,PVG
+K,United,___,ORD,EWR,___,PVG
+L,United,___,ORD,IAD,EWR,PVG
+M,United,___,ORD,LAS,LAX,PVG
+N,United,___,ORD,LAX,___,PVG
+O,United,___,ORD,LGA,EWR,PVG
