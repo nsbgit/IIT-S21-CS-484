@@ -28,6 +28,10 @@ evals, evecs = LA.eigh(xtx)
 print("Eigenvalues of x = \n", evals)
 print("Eigenvectors of x = \n",evecs)
 
+# If you want eigenvalues greater than one, then uncomment the following lines
+# evals_1 = evals[evals > 1.0]
+# evecs_1 = evecs[:,evals > 1.0]
+
 # Here is the transformation matrix
 dvals = 1.0 / numpy.sqrt(evals)
 transf = evecs * numpy.diagflat(dvals)
