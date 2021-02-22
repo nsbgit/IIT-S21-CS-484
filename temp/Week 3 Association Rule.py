@@ -1,16 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 21 17:48:44 2021
-
-@author: pc
-"""
-
 import pandas
 
-ToyAssoc = pandas.read_csv('q2data.csv', delimiter=',')
+ToyAssoc = pandas.read_csv('AssociationRuleToyExample.csv',
+                           delimiter=',')
 
 # Convert the Sale Receipt data to the Item List format
-ListItem = ToyAssoc.groupby(['Friend'])['Item'].apply(list).values.tolist()
+ListItem = ToyAssoc.groupby(['Customer'])['Item'].apply(list).values.tolist()
 
 # Convert the Item List format to the Item Indicator format
 from mlxtend.preprocessing import TransactionEncoder
