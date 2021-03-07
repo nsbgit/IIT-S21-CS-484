@@ -1,0 +1,8 @@
+Midterm Exam - CS 484 - Introduction to Machine Learning
+=========================================================
+Instrunction:
+=============
+1. Calculate your answers using all the available precision
+2. If your final numeric answer has more than four decimal places, then round the numeric answer to the nearest fourth decimal place.
+3. If your final numeric answer has four or fewer decimal places, then give the exact value.
+4. You can attempt this test once.
