@@ -8,7 +8,7 @@ from itertools import combinations
 # Set some options for printing all the columns
 pandas.set_option('precision', 7)
 
-cars = pandas.read_csv('C:\\IIT\Machine Learning\\Data\\cars.csv', delimiter=',')
+cars = pandas.read_csv('cars.csv', delimiter=',')
 
 def SWEEPOperator (pDim, inputM, tol):
     # pDim: dimension of matrix inputM, integer greater than one
@@ -36,7 +36,7 @@ def SWEEPOperator (pDim, inputM, tol):
         A = ANext
     return (A, aliasParam, nonAliasParam)
 
-inputData = pandas.read_csv('C:\\IIT\Machine Learning\\\Data\\cars.csv',
+inputData = pandas.read_csv('cars.csv',
                             delimiter = ',', header = 0)
 
 catFeature = ['DriveTrain', 'Type', 'Cylinders']

@@ -31,7 +31,7 @@ def EntropyIntervalSplit (
   
    return(tableEntropy)
 
-cars = pandas.read_csv('C:\\IIT\\Machine Learning\\Data\\cars.csv',
+cars = pandas.read_csv('cars.csv',
                        delimiter=',')
 
 inData2 = cars[['Cylinders', 'Origin']].dropna()
@@ -46,7 +46,7 @@ crossTable = pandas.crosstab(index = inData2['Cylinders'], columns = inData2['Or
                              margins = True, dropna = True)   
 print(crossTable)
 
-# Split (3), (4, 5, 6, 8, 10, 12)
+# Split (None), (4, 5, 6, 8, 10, 12)
 EV = EntropyIntervalSplit(inData2, 2.5)
 print('Split Entropy = ', EV)
 
@@ -116,4 +116,4 @@ dot_data = tree.export_graphviz(cars_DT,
 graph = graphviz.Source(dot_data)
 graph
 
-graph.render('C:\\IIT\\Machine Learning\\Job\\cars_DT_output')
+graph.render('cars_DT_output')
