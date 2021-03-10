@@ -392,4 +392,4 @@ def question_6():
 if __name__ == '__main__':
     question_4()
     question_5()
-    question_6()
+    # question_6()
