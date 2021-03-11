@@ -4,7 +4,7 @@ import scipy
 
 import statsmodels.api as stats
 
-cars = pandas.read_csv('C:\\MScAnalytics\\Data Mining Principles\\Data\\cars.csv',
+cars = pandas.read_csv('cars.csv',
                        delimiter=',', usecols = ['Origin', 'DriveTrain', 'Weight'])
 
 nObs = cars.shape[0]
