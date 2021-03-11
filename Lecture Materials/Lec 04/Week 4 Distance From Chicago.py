@@ -4,7 +4,7 @@ import sklearn.cluster as cluster
 import sklearn.metrics as metrics
 import pandas
 
-DistanceFromChicago = pandas.read_csv('C:\\IIT\\Machine Learning\\Data\\DistanceFromChicago.csv',
+DistanceFromChicago = pandas.read_csv('DistanceFromChicago.csv',
                       delimiter=',', index_col='CityState')
 
 nCity = DistanceFromChicago.shape[0]
