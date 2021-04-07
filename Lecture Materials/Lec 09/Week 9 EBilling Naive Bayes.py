@@ -25,7 +25,7 @@ def RowWithColumn (
 
    return
 
-inputData = pandas.read_csv('C:\\IIT\\Machine Learning\\Data\\CustomerSurveyData.csv',
+inputData = pandas.read_csv('CustomerSurveyData.csv',
                          delimiter=',')
 
 # EBilling -> CreditCard, Gender, JobCategory
