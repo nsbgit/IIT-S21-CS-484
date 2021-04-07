@@ -1,0 +1,8 @@
+,2
+group_size,1.0
+homeowner,1.0
+married_couple,0.0
+Prob (insurance = 0),0.20558785905937507
+Prob (insurance = 1),0.6541277133010495
+Prob (insurance = 2),0.1402844276395754
+Odd Value(Prob (insurance = 1)/Prob (insurance = 2)),4.662867606243949
