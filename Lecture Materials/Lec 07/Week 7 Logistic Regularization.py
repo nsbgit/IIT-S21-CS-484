@@ -38,7 +38,7 @@ def SWEEPOperator (pDim, inputM, tol):
 catTarget = 'BAD'
 intPred = ['LOAN', 'MORTDUE', 'VALUE', 'YOJ', 'CLAGE', 'CLNO', 'DEBTINC']
 
-hmeq = pandas.read_csv('C:\\IIT\Machine Learning\\Data\\hmeq.csv',
+hmeq = pandas.read_csv('hmeq.csv',
                        delimiter=',', usecols = [catTarget]+intPred)
 trainData = hmeq.dropna()
 

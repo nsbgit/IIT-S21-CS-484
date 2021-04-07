@@ -108,7 +108,7 @@ def RegressionTest (xCont, yCont):
 catPred = ['REASON', 'JOB', 'DEROG', 'DELINQ', 'NINQ']
 intPred = ['LOAN', 'MORTDUE', 'VALUE', 'YOJ', 'CLAGE', 'CLNO', 'DEBTINC']
 
-hmeq = pandas.read_csv('C:\\IIT\Machine Learning\\Data\\hmeq.csv',
+hmeq = pandas.read_csv('hmeq.csv',
                        delimiter=',', usecols = ['BAD']+catPred+intPred)
 hmeq = hmeq.dropna()
 
