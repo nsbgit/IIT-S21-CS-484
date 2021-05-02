@@ -45,7 +45,7 @@ def ModelMetrics (
 
     return(AUC, RASE, MisClassRate)
 
-hmeq = pandas.read_csv('C:\\IIT\\Machine Learning\\Data\\hmeq.csv', delimiter=',', usecols = ['DELINQ', 'DEBTINC', 'BAD'])
+hmeq = pandas.read_csv('hmeq.csv', delimiter=',', usecols = ['DELINQ', 'DEBTINC', 'BAD'])
 hmeq = hmeq.dropna()
 
 # Partition the data, 70% for training and 30% for testing

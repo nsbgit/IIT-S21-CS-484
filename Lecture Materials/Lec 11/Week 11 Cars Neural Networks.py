@@ -3,7 +3,7 @@ import numpy
 import pandas
 import sklearn.neural_network as nn
 
-inputData = pandas.read_csv('C:\\IIT\\Machine Learning\\Data\\cars.csv', delimiter=',')
+inputData = pandas.read_csv('cars.csv', delimiter=',')
 
 target = 'DriveTrain'
 

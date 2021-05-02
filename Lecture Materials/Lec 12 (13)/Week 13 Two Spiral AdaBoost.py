@@ -5,7 +5,7 @@ import pandas
 import sklearn.ensemble as ensemble
 import sklearn.tree as tree
 
-trainData = pandas.read_csv('C:\\IIT\\Machine Learning\\Data\\SpiralWithCluster.csv', delimiter=',')
+trainData = pandas.read_csv('SpiralWithCluster.csv', delimiter=',')
 
 nObs = trainData.shape[0]
 
