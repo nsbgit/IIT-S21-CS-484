@@ -171,18 +171,6 @@ for i in range(BOOTSTRAP_SAMPLE):
     pred_prob = logistic.predict_proba(x_test)
     AUC_array[i] = metrics.roc_auc_score(y_test, pred_prob[:,1])
 
-
-# q2.d -------------------------------
-prct_2_5 = numpy.percentile(AUC_array, (2.5))
-prct_97_5 = numpy.percentile(AUC_array, (97.5))                          
-str_d = '95% Confidence Interval: {:.7f}, {:.7f}' .format(
-    prct_2_5
-    , prct_97_5)
-print(str_d)
-
-
-# q2.e -------------------------------
-
 HIST_BINS = numpy.arange(min (AUC_array), max(AUC_array) +0.001, 0.001)
 plt.hist(
     AUC_array
@@ -192,3 +180,9 @@ plt.grid(axis='both')
 plt.xlabel('AUC Value')
 plt.ylabel('No of observations')
 plt.show()
+
+# q2.d -------------------------------
+prct_2_5 = numpy.percentile(AUC_array, (2.5))
+prct_97_5 = numpy.percentile(AUC_array, (97.5))  
+confidence_interval_95 = '95% Confidence Interval is {:.7f}, {:.7f}' .format(prct_2_5, prct_97_5)
+print(f'2.5th percentile is {prct_2_5} and 97.5th percentile is {prct_97_5}')
