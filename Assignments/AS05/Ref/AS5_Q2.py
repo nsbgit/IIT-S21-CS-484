@@ -27,7 +27,7 @@ INTERRUPT_ACCURACY = 0.9999999
 INPUT_FEATURES = ['alcohol', 'citric_acid', 'free_sulfur_dioxide', 'residual_sugar', 'sulphates']
 TARGET_FEATURE = 'quality_grp'
 random.seed(INIT_RNDM_SEED)
-BOOTSTRAP_SAMPLE = 10
+BOOTSTRAP_SAMPLE = 10000
 HIST_BIN_WIDTH = 0.001
 
 
@@ -159,7 +159,7 @@ for i in range(BOOTSTRAP_SAMPLE):
     predicted_probability = logistic.predict_proba(x_test)
     arr_auc[i] = metrics.roc_auc_score(y_test, predicted_probability[:, 1])
 
-HIST_BINS = np.arange(min(arr_auc), max(arr_auc) + 0.001, 0.001)
+HIST_BINS = np.arange(min(arr_auc), max(arr_auc) + HIST_BIN_WIDTH, HIST_BIN_WIDTH)
 plt.hist(
     arr_auc
     , bins=HIST_BINS
@@ -173,4 +173,4 @@ plt.show()
 prct_2_5 = np.percentile(arr_auc, (2.5))
 prct_97_5 = np.percentile(arr_auc, (97.5))
 confidence_interval_95 = '95% Confidence Interval is {:.7f}, {:.7f}'.format(prct_2_5, prct_97_5)
-print(f'2.5th percentile is {prct_2_5} and 97.5th percentile is {prct_97_5}')
+print(f'2.5th percentile is {prct_2_5} and 97.5th percentile is {prct_97_5} and {confidence_interval_95}')
