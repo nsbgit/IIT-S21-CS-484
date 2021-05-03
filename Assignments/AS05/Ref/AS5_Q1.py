@@ -6,13 +6,10 @@ Created on Sun May  1 19:16:46 2021
 """
 
 # Importig Libraries
-import matplotlib.pyplot as plt
 import numpy
 import pandas
-import sklearn.ensemble as ensemble
 import sklearn.tree as tree
 import sklearn.metrics as metrics
-import graphviz
 
 # -------------------------------
 
