@@ -38,13 +38,6 @@ y_train = trainData[TARGET_FEATURE]
 x_test = trainData[INPUT_FEATURES]
 y_test = trainData[TARGET_FEATURE]
 # q1.a, b -------------------------------
-# classTree = tree.DecisionTreeClassifier(criterion='entropy', max_depth=5, random_state=20210415)
-# treeFit = classTree.fit(x_train, y_train)
-# treePredProb = classTree.predict_proba(x_train)
-# accuracy = classTree.score(x_train, y_train)
-# print(f'Misclassification Rate Iteration 0 = {1-accuracy}')
-
-# # q1.b -------------------------------
 
 
 w_train = numpy.full(nObs, 1.0)
@@ -55,13 +48,13 @@ coverged_accuracy = numpy.nan
 covereged_iteration = numpy.nan
 
 for iter in range(50):
-    classTree = tree.DecisionTreeClassifier(criterion='entropy', max_depth=5, random_state=20210415)
+    classTree = tree.DecisionTreeClassifier(criterion=SPLITTING_CRITERION, max_depth=MAXIMUM_TREE_DEPTH, random_state=INIT_RNDM_SEED)
     treeFit = classTree.fit(x_train, y_train, w_train)
     treePredProb = classTree.predict_proba(x_train)
     accuracy[iter] = classTree.score(x_train, y_train, w_train)
     ensemblePredProb += accuracy[iter] * treePredProb
 
-    if (accuracy[iter] >= INTERRUPT_ACCURACY):
+    if accuracy[iter] >= INTERRUPT_ACCURACY:
         is_converged = True
         coverged_accuracy = accuracy[iter]
         covereged_iteration = iter
@@ -79,67 +72,26 @@ print(f'The Misclassification Rate of the classification tree on the Training da
 
 
 #  q1.c -------------------------------
+if is_converged:
+    print('The iteration is converged at Iteration {} and the Misclassification Rate of the classification tree on the Training data is {:.7f}'.format(covereged_iteration, 1 - coverged_accuracy))
+else:
+    print('The iteration is not converged')
+    
+    
+# q1.d -------------------------------
 
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
-# -------------------------------
+
+y_score = treeFit.predict_proba(x_test)
+AUC = metrics.roc_auc_score(y_test,y_score[:,1])
+print(f'The Area Under Curve metric on the Testing data using the final converged classification tree is {AUC}')
+
+
+# q1.e -------------------------------
+
+
+df3= pandas.concat(
+    [pandas.DataFrame(y_test), pandas.DataFrame(treePredProb[:,1])]
+    , axis=1
+    , join='inner')
+df3 = df3.rename(columns={0:"Prediction"})
+df3.boxplot(column='Prediction', by='quality_grp')
