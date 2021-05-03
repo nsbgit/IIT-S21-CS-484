@@ -135,7 +135,15 @@ for r in range(1,nComb):
 key_min = min(chi_dict.keys(), key=(lambda k: chi_dict[k]))
 print('Model = Intercept +',' + '.join(''.join(t) for t in key_min))
 
-# -------------------------------
+# q2.b -------------------------------
+
+
+logistic = LogisticRegression(random_state = INIT_RNDM_SEED).fit(x_train,y_train)
+pred_prob = logistic.predict_proba(x_test)
+AUC = metrics.roc_auc_score(y_test, pred_prob[:,1])       
+print(f'The Area Under Curve metric on the Testing data is {AUC}')
+
+
 # -------------------------------
 # -------------------------------
 # -------------------------------
