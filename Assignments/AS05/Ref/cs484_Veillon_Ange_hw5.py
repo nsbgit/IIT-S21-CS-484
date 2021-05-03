@@ -14,8 +14,8 @@ from sklearn.linear_model import LogisticRegression
 import random
 random.seed(20210415)
 
-train = pd.read_csv("C:/Users/Ange/Downloads/WineQuality_Train.csv").drop(['type','quality','pH','density','total_sulfur_dioxide','chlorides','volatile_acidity','fixed_acidity'],axis=1)
-test = pd.read_csv("C:/Users/Ange/Downloads/WineQuality_Test.csv").drop(['type','quality','pH','density','total_sulfur_dioxide','chlorides','volatile_acidity','fixed_acidity'],axis=1)
+train = pd.read_csv("WineQuality_Train.csv").drop(['type','quality','pH','density','total_sulfur_dioxide','chlorides','volatile_acidity','fixed_acidity'],axis=1)
+test = pd.read_csv("WineQuality_Test.csv").drop(['type','quality','pH','density','total_sulfur_dioxide','chlorides','volatile_acidity','fixed_acidity'],axis=1)
 
 
 x_train = train.drop('quality_grp',axis=1)

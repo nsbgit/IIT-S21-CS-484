@@ -21,8 +21,8 @@ import sklearn.metrics as metrics
 # In[3]:
 
 
-trainData = pandas.read_csv('C:\\Users\\khura\\Python\\ML5\\WineQuality_Train.csv', delimiter=',')
-testData = pandas.read_csv('C:\\Users\\khura\\Python\\ML5\\WineQuality_Test.csv', delimiter=',')
+trainData = pandas.read_csv('WineQuality_Train.csv', delimiter=',')
+testData = pandas.read_csv('WineQuality_Test.csv', delimiter=',')
 
 
 # In[4]:
