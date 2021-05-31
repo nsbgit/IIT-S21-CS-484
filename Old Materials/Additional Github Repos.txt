@@ -2,3 +2,4 @@ https://github.com/Amitdeb008/IIT-CS584-Machine-Learning.git
 https://github.com/dvtate/cs484
 https://github.com/MarkGelo/CS-484
 https://github.com/vigneshkrv/CS-584-Machine-Learning
+https://github.com/VoraHarsh/iit-cs584-Machine-Learning
