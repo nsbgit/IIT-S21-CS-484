@@ -1,0 +1,2 @@
+https://github.com/Amitdeb008/IIT-CS584-Machine-Learning.git
+https://github.com/dvtate/cs484
